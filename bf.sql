@@ -33,9 +33,26 @@ CREATE TABLE `arma` (
   `cadencia` bigint(20) DEFAULT '0',
   `capacidadeDoPente` bigint(20) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `arma` */
+
+insert  into `arma`(`id`,`nome`,`tipo`,`acessorio`,`dano`,`alcance`,`precisao`,`tiroSemVisada`,`estabilidade`,`cadencia`,`capacidadeDoPente`) values (1,'Teste','2',1,0,0,0,0,0,0,0),(2,'q','1',0,4,4,4,4,4,4,4),(3,'t','2',1,0,0,0,0,0,0,0),(4,'i','1',1,0,0,0,0,0,0,0),(5,'r','2',0,6,6,6,6,6,6,6),(6,'q','1',1,0,0,0,0,0,0,0);
+
+/*Table structure for table `classe` */
+
+DROP TABLE IF EXISTS `classe`;
+
+CREATE TABLE `classe` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` char(100) DEFAULT NULL,
+  `tipo` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `classe` */
+
+insert  into `classe`(`id`,`nome`,`tipo`) values (1,'teste','teste');
 
 /*Table structure for table `jogador` */
 
@@ -55,11 +72,11 @@ CREATE TABLE `jogador` (
   `armaFavorita` char(100) DEFAULT NULL,
   `veiculoFavorito` char(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 /*Data for the table `jogador` */
 
-insert  into `jogador`(`id`,`nomeDeUsuario`,`senha`,`nome`,`email`,`patente`,`kd`,`score`,`tempoJogo`,`classeFavorita`,`armaFavorita`,`veiculoFavorito`) values (9,'1',1,'1','1',1,1,1,1,'null','null','null'),(10,'carlos',123,'Carlos Henrique','carlosjacinto@gec.inatel.br',9,9,9,9,'null','null','null'),(11,'2',2,'2','2',2,2,2,2,'null','null','null'),(14,'teste',7,'t','t',7,7,7,7,'null','null','null');
+insert  into `jogador`(`id`,`nomeDeUsuario`,`senha`,`nome`,`email`,`patente`,`kd`,`score`,`tempoJogo`,`classeFavorita`,`armaFavorita`,`veiculoFavorito`) values (9,'1',1,'1','1',1,1,1,1,'null','null','null'),(10,'carlos',123,'Carlos Henrique','carlosjacinto@gec.inatel.br',9,9,9,9,'null','null','null'),(15,'3',3,'3','3',3,3,3,3,'null','null','null'),(16,'1',6,'6','6',6,6,6,6,'null','null','null'),(17,'3',0,'0','0',0,0,0,0,'null','null','null'),(18,'6',2,'2','2',2,2,2,2,'null','null','null'),(19,'6',9,'9','9',9,9,9,9,'null','null','null');
 
 /*Table structure for table `usuariosadmin` */
 
