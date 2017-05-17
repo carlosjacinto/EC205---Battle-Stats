@@ -37,7 +37,7 @@ CREATE TABLE `arma` (
 
 /*Data for the table `arma` */
 
-insert  into `arma`(`id`,`nome`,`tipo`,`acessorio`,`dano`,`alcance`,`precisao`,`tiroSemVisada`,`estabilidade`,`cadencia`,`capacidadeDoPente`) values (1,'Teste','2',1,0,0,0,0,0,0,0),(2,'q','1',0,4,4,4,4,4,4,4),(3,'t','2',1,0,0,0,0,0,0,0),(4,'i','1',1,0,0,0,0,0,0,0),(5,'r','2',0,6,6,6,6,6,6,6),(6,'q','1',1,0,0,0,0,0,0,0);
+insert  into `arma`(`id`,`nome`,`tipo`,`acessorio`,`dano`,`alcance`,`precisao`,`tiroSemVisada`,`estabilidade`,`cadencia`,`capacidadeDoPente`) values (1,'Teste','2',1,0,0,0,0,0,0,0),(2,'aek','rifle de assalto',0,28,27,16,18,15,900,30),(4,'i','1',1,0,0,0,0,0,0,0),(5,'r','2',0,6,6,6,6,6,6,6),(6,'aek','rifle de assalto',0,28,27,16,18,15,900,30);
 
 /*Table structure for table `classe` */
 
@@ -48,7 +48,7 @@ CREATE TABLE `classe` (
   `nome` char(100) DEFAULT NULL,
   `tipo` char(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `classe` */
 
@@ -92,6 +92,24 @@ CREATE TABLE `usuariosadmin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `usuariosadmin` */
+
+/*Table structure for table `veiculo` */
+
+DROP TABLE IF EXISTS `veiculo`;
+
+CREATE TABLE `veiculo` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` char(100) DEFAULT NULL,
+  `tipo` char(100) DEFAULT NULL,
+  `possuiArmamento` int(20) DEFAULT NULL,
+  `armaPrimaria` char(100) DEFAULT NULL,
+  `armaSecundaria` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `veiculo` */
+
+insert  into `veiculo`(`id`,`nome`,`tipo`,`possuiArmamento`,`armaPrimaria`,`armaSecundaria`) values (1,'a','t',0,'',''),(2,'t','r',1,'2','3'),(3,'LAV','Veiculo leve',1,'canhao 25mm','dsa'),(4,'R','e',0,'',''),(6,'t-90','tanque',1,'sabot','araa');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
